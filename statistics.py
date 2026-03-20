@@ -1,22 +1,22 @@
-def calcular_estadisticas(inventario):
-    len_inventario = len(inventario)#obtener la cantidad de productos en el inventario
+def calculate_statistics(inventory):
+    len_inventory = len(inventory)#obtener la cantidad de productos en el inventario
     
-    if len_inventario == 0:#manejo de error si el inventario está vacío
+    if len_inventory == 0:#manejo de error si el inventario está vacío
         
         print("  No hay productos en el inventario para calcular estadísticas.\n")
         return#salir de la función si no hay productos en el inventario
     
     else:#calcular estadísticas si hay productos en el inventario
         
-        precios = [producto['precio'] for producto in inventario]#crear una lista de precios a partir del inventario
+        prices = [product['price'] for product in inventory]#crear una lista de precios a partir del inventario
         
-        cantidades = [producto['cantidad'] for producto in inventario]
+        quantitys = [product['quantity'] for product in inventory]
         
-        precio_total = sum(precios)#calcular el precio total sumando todos los precios de los productos en el inventario
-        cantidad_total = sum(cantidades)
+        price_total = sum(prices)#calcular el precio total sumando todos los precios de los productos en el inventario
+        quantity_total = sum(quantitys)
         
         #calcular el valor total del inventario multiplicando el precio por la cantidad de cada producto y sumando los resultados
-        valor_total_inventario = sum(producto['precio'] * producto['cantidad'] for producto in inventario)
+        total_inventory_value = sum(product['price'] * product['quantity'] for product in inventory)
 
-        print(f"  → Cantidad total de productos: {cantidad_total}")
-        print(f"  → Valor total del inventario: ${valor_total_inventario:.2f}\n")
+        print(f"  → Cantidad total de productos: {quantity_total}")
+        print(f"  → Valor total del inventario: ${total_inventory_value:.2f}\n")
