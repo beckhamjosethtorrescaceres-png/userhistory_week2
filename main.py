@@ -1,1 +1,2 @@
-print ("hello beckham")
+from menu import *
+mostrar_menu()
